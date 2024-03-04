@@ -5,7 +5,7 @@ export default function Home() {
     <div className="grid grid-cols-10 gap-4 p-10">
       <div className=" rounded-xl col-span-5 flex">
         <div className="w-full flex flex-col justify-center items-center">
-          <div className="text-3xl ">Tired From the work?</div>
+          <div className="text-3xl ">Tired from the Work?</div>
         
           <div>
             Just forget the work and take a sip in entire new world

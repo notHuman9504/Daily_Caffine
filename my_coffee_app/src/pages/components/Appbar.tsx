@@ -5,6 +5,7 @@ export function Appbar() {
         position: "sticky",
         top: 0,
         width: "100%",
+        zIndex:2
       }}
     >
       <div className="h-16 rounded-full px-10 m-1 bg-amber-300 shadow-xl ">
