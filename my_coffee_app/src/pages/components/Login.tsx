@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import TextField from "@mui/material/TextField";
+import { signIn } from "next-auth/react";
 export function Login() {
   return (
     <div>
@@ -53,6 +54,10 @@ export function Login() {
             variant="contained"
             style={{
               width: "400px",
+            }}
+            onClick={async()=>{
+      
+              signIn('google',{callbackUrl:"http://localhost:3000/dashboard"})
             }}
           >
             Sign In with Google
