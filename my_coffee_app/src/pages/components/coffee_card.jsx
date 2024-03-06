@@ -1,4 +1,5 @@
 import { Button } from "@mui/material";
+import { signOut } from "next-auth/react";
 export function CoffeeCard() {
   return (
     <div className="rounded-lg border-2 border-amber-300 shadow-xl p-2">

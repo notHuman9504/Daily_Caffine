@@ -1,5 +1,4 @@
 import {CoffeeCard} from "./components/coffee_card"
-import {signIn, useSession, signOut} from "next-auth/react"
 import {getServerSession} from "next-auth";
 import { authOptions } from '@/pages/api/auth/[...nextauth]'
 export default function Dashboard({session}){
@@ -46,7 +45,6 @@ export default function Dashboard({session}){
 
 export async function getServerSideProps(context) {
     const session = await getServerSession(context.req, context.res, authOptions)
-
     if (!session) {
         return {
             redirect: {
@@ -58,7 +56,11 @@ export async function getServerSideProps(context) {
 
     return {
         props: {
-            session,
+            session:{
+                user:{
+                    email:session.user.email
+                }
+            }
         },
     }
 }

@@ -1,6 +1,20 @@
-
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const session=useSession();
+  const router = useRouter();
+  function route()
+  {
+    if(session.data)
+          {
+            router.push('/dashboard')
+          }
+          else
+          {
+            router.push('/signup')
+          }
+  }
   return (<div className="pt-10">
     <div className="grid grid-cols-10 gap-4 p-10">
       <div className=" rounded-xl col-span-5 flex">
@@ -10,7 +24,9 @@ export default function Home() {
           <div>
             Just forget the work and take a sip in entire new world
           </div>
-          <div className="m-4 py-2 px-6 border-2 border-amber-300 bg-amber-300 rounded-full duration-300 shadow-xl hover:border-black"><a href="">Grab a Coffee</a></div>
+          <div className="m-4 py-2 px-6 border-2 border-amber-300 bg-amber-300 rounded-full duration-300 shadow-xl hover:border-black"><div className="hover:cursor-pointer"
+          onClick={route}
+          >Grab a Coffee</div></div>
         </div>
       </div>
       <div className="col-span-5">
@@ -21,7 +37,11 @@ export default function Home() {
         <div className="col-span-1"><img className="w-full rounded-xl" src="./Recommended3.jpeg" alt="" /></div>
         <div></div>
         </div>
-        <div className="m-4 py-2 px-6 text-center border-2 border-amber-300 bg-amber-300 rounded-full duration-300 shadow-xl hover:border-black"><a href="">Check Out the Latest </a></div>
+        <div className="m-4 py-2 px-6 text-center border-2 border-amber-300 bg-amber-300 rounded-full duration-300 shadow-xl hover:border-black"><div className="hover:cursor-pointer" 
+        onClick={()=>{
+          route();
+        }}
+        >Check Out the Latest </div></div>
 
         <div>
 
