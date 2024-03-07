@@ -1,6 +1,6 @@
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-
+import { Footer } from "./components/Footer";
 export default function Home() {
   const session=useSession();
   const router = useRouter();
@@ -15,7 +15,8 @@ export default function Home() {
             router.push('/signup')
           }
   }
-  return (<div className="pt-10">
+  return (<>
+  <div className="pt-10">
     <div className="grid grid-cols-10 gap-4 p-10">
       <div className=" rounded-xl col-span-5 flex">
         <div className="w-full flex flex-col justify-center items-center">
@@ -42,12 +43,11 @@ export default function Home() {
           route();
         }}
         >Check Out the Latest </div></div>
-
-        <div>
-
-        </div>
       </div>
     </div>
-
-  </div>)
+    <div>
+      
+    </div>
+  </div>
+  </>)
 }

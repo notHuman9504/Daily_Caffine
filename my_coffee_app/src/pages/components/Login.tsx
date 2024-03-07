@@ -51,10 +51,11 @@ export function Login() {
         </div>
         <div className="mt-6">
           <Button
-            className="text-black bg-amber-300 hover:bg-amber-300 rounded-xl"
             variant="contained"
             style={{
               width: "400px",
+              color:"black",
+              backgroundColor:"#FFD54F"
             }}
             onClick={async()=>{
               const status=await signIn('credentials',{
@@ -75,10 +76,12 @@ export function Login() {
         <div>or</div>
         <div>
           <Button
-            className="text-black bg-amber-300 hover:bg-amber-300 rounded-xl"
+            
             variant="contained"
             style={{
               width: "400px",
+              color:"black",
+              backgroundColor:"#FFD54F"
             }}
             onClick={async()=>{
       

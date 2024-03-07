@@ -72,10 +72,11 @@ export function SignUp() {
         </div>
         <div className="mt-6">
           <Button
-            className="text-black bg-amber-300 hover:bg-amber-300 rounded-xl"
             variant="contained"
             style={{
               width: "400px",
+              color:"black",
+              backgroundColor:"#FFD54F"
             }}
             onClick={async()=>{
               const res=await axios.post('http://localhost:3000/api/auth/signup',{
@@ -99,18 +100,6 @@ export function SignUp() {
             }}
           >
             Sign Up
-          </Button>
-        </div>
-        <div>or</div>
-        <div>
-          <Button
-            className="text-black bg-amber-300 hover:bg-amber-300 rounded-xl"
-            variant="contained"
-            style={{
-              width: "400px",
-            }}
-          >
-            Sign Up with Google
           </Button>
         </div>
       </div>
