@@ -2,10 +2,10 @@ import { Button } from "@mui/material";
 import { signOut } from "next-auth/react";
 export function CoffeeCard({item}) {
   return (
-    <div className="rounded-lg border-2 border-amber-300 shadow-xl p-2">
+    <div className="rounded-lg border-2 border-amber-300 shadow-md p-2">
       <div>
         <img
-          className="w-full rounded-lg shadow-lg"
+          className="w-full aspect-[4/4] object-cover rounded-lg shadow-lg"
           src={item.image}
           alt=""
         />

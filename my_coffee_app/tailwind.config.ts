@@ -15,6 +15,30 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function({addUtilities})
+    {
+      const newUtilities={
+        '.scrollbar-thin':{
+          scrollbarWidth : "thin",
+          scrollbarColor :"#FFD54F white"
+        },
+        ".scrollbar-webkit":{
+          "&::-webkit-scrollbar":{
+            width:"8px"
+          },
+          "&::-webkit-scrollbar-track":{
+            background:"white"
+          },
+          "&::-webkit-scrollbar-thumb":{
+            backgroundColor:"#FFD54F",
+            borderRadius:"20px"
+          }
+        }
+      }
+
+      addUtilities(newUtilities,["responsive","hover"])
+    }
+  ],
 };
 export default config;

@@ -10,7 +10,7 @@ export default function Dashboard({session,categories}){
                     return (
                         <div>
                             <h2 className="text-black text-3xl p-2">{category.type}</h2>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-14">
+                            <div className="grid grid-flow-col auto-cols-max gap-14 overflow-x-auto scrollbar-thin scrollbar-webkit pb-4 overscroll-contain">
                             {
                                 category.items.map((item)=>{
                                     return (<CoffeeCard item={item} ></CoffeeCard>)
