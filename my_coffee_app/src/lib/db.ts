@@ -17,11 +17,12 @@ const categorySchema = new mongoose.Schema({
 
 export const Category = mongoose.models.Category || mongoose.model('Category',categorySchema);
 
+
 const userSchema = new mongoose.Schema({
     name: String,
     email: String,
     password: String,
-    cart:[{type:mongoose.Schema.Types.ObjectId,ref:'Item'}]
+    cart:[{item:{type:mongoose.Schema.Types.ObjectId,ref:'Item'},count:Number}]
 });
 
 

@@ -4,7 +4,6 @@ import CredentialsProvider from "next-auth/providers/credentials"
 import  dbConnect  from "@/lib/dbConnect";
 import { Provider } from "next-auth/providers";
 import { User } from "@/lib/db";
-import { getAccordionUtilityClass } from "@mui/material";
 export const authOptions:any = {
     providers: [
         GoogleProvider({

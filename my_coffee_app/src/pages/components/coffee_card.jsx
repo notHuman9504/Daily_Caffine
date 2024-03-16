@@ -1,5 +1,7 @@
 import { Button } from "@mui/material";
+import axios from "axios";
 import { signOut } from "next-auth/react";
+import { type } from "os";
 export function CoffeeCard({item}) {
   return (
     <div className="rounded-lg border-2 border-amber-300 shadow-md p-2">
@@ -24,6 +26,14 @@ export function CoffeeCard({item}) {
               borderRadius:"50px"
             }}
             variant="contained"
+            onClick={async()=>{
+              // const res=await axios.post("http://localhost:3000/api/addtocart",{
+              //   itemId:item._id
+              // },{headers: {
+              //   'Content-Type': 'application/json',
+              // }})
+
+            }}
           >
             Grab It for {item.price}
           </Button>

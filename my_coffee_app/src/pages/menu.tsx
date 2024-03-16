@@ -2,15 +2,15 @@ import {CoffeeCard} from "./components/coffee_card"
 import {getServerSession} from "next-auth";
 import { authOptions } from '@/pages/api/auth/[...nextauth]'
 import axios from "axios";
-export default function Dashboard({session,categories}){
+export default function Menu({session,categories}){
     return <div className="py-10 px-20">
         <div>
             {
                 categories.map((category) =>{
                     return (
-                        <div>
+                        <div >
                             <h2 className="text-black text-3xl p-2">{category.type}</h2>
-                            <div className="grid grid-flow-col auto-cols-max gap-14 overflow-x-auto scrollbar-thin scrollbar-webkit pb-4 overscroll-contain">
+                            <div className="grid grid-flow-col auto-cols-max gap-14 overflow-x-auto  pb-4 overscroll-x-contain">
                             {
                                 category.items.map((item)=>{
                                     return (<CoffeeCard item={item} ></CoffeeCard>)
