@@ -14,3 +14,6 @@ project will start running at port 3000 (http://localhost:3000)<br/>
 
 images:
 ![Landing Page](image.png)
+![Login Page](image-1.png)
+![Menu](image-2.png)
+![Cary](image-3.png)
