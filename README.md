@@ -16,4 +16,4 @@ images:
 ![Landing Page](image.png)
 ![Login Page](image-1.png)
 ![Menu](image-2.png)
-![Cary](image-3.png)
+![Cart](image-3.png)
