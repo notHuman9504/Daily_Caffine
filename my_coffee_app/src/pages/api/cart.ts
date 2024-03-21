@@ -1,24 +1,25 @@
-import { authOptions } from "@/pages/api/auth/[...nextauth]";
-import { User ,Item} from "@/lib/db";
+import { getServerSession } from "next-auth/next"
+import { authOptions } from "./auth/[...nextauth]"
 import dbConnect from "@/lib/dbConnect";
-import { getServerSession } from 'next-auth';
-import { getSession } from "next-auth/react";
+import { User } from "@/lib/db";
+
 
 export default async function handler(req,res){
     
-    await dbConnect();
-    const session = await getServerSession(req,res,authOptions)
-    console.log(session);
-    
+    const session = await getServerSession(req, res, authOptions)
+    await dbConnect(); 
     if(!session)
     {
-        
-        res.status(200).json({ error: 'Unauthorized' });
-        return;
+        res.status(403).json({message:"UnAuthorized"});
     }
-    else
-    {
-        res.json({s:"Hello"});
+    else{
+        const user=await User.findOne({email:session.user.email}).populate('cart.item');
+        if(!user)
+        {
+            res.status(403).json({message:"User Doesnt Exist"});
+        }
+        else{
+            res.json({cart:user.cart});
+        }
     }
-    
 }

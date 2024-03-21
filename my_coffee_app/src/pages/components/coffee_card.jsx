@@ -27,11 +27,11 @@ export function CoffeeCard({item}) {
             }}
             variant="contained"
             onClick={async()=>{
-              // const res=await axios.post("http://localhost:3000/api/addtocart",{
-              //   itemId:item._id
-              // },{headers: {
-              //   'Content-Type': 'application/json',
-              // }})
+              const res=await axios.post("http://localhost:3000/api/addtocart",{
+                itemId:item._id
+              },{headers: {
+                'Content-Type': 'application/json',
+              }})
 
             }}
           >

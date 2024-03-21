@@ -1,9 +1,9 @@
-import { signIn } from "next-auth/react";
 import {useSession,signOut} from "next-auth/react"
 import { useRouter } from "next/router";
-export function Appbar() {
+export default function Appbar(props) {
   const router = useRouter()
   const session=useSession();
+
   return (
     <div
       style={{
@@ -52,3 +52,4 @@ export function Appbar() {
     </div>
   );
 }
+
